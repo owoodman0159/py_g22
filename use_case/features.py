@@ -35,6 +35,16 @@ def match(users, interests, actions, uid):
         return None
     return records[np.argmax([record[1] for record in records])][0]
 
+def get_mutual_like(users, uid, actions):
+    matched = [action.uid2 for action in actions if action.uid1 == uid and action.action == 1]
+    # print(matched)
+    mut = []
+    for target_uid in matched:
+
+        if uid in [action.uid2 for action in actions if (action.uid1 == target_uid and action.action == 1)]:
+            mut.append((target_uid, (get_user_with_id(users, target_uid).name)))
+
+    return mut
 def like_user(actions, uid1, uid2):
     actions.append(Action(uid1, uid2, 1))
 def unlike_user(actions, uid1, uid2):
