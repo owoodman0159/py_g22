@@ -41,7 +41,9 @@ def get_user_info(uid):
         with sqlite3.connect(DB_PATH) as connection:
             cursor = connection.cursor()
             # TODO: Implement the logic to get user's information
-            pass
+            cursor = connection.cursor()
+            cursor.execute('SELECT name, email, gender, location, age FROM User WHERE uid = ?', (uid,))
+            return cursor.fetchone()
 
     except sqlite3.Error as e:
         # print error message

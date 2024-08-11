@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 22</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Match App</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div>
+        {{ messages[-1] }}
+        </div>
+        {% endif %}
+        {% endwith %}
+        <button onclick="createUser()">Create New User</button>
+        <button onclick="loginUser()">Log In with Userid</button>
+    </div>
+
+    <script>
+        function createUser() {
+            // Redirect to create user page
+            window.location.href = "/register";
+        }
+
+        function loginUser() {
+            let userId = prompt("Please enter your User ID:");
+            if (userId) {
+                // Logic for logging in with the provided user ID
+                window.location.href = `/profile/${userId}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -32,7 +32,7 @@ def get_user_profile(uid):
     else ()
     """
     # TODO: HINT: use get_user_info(uid) from dai.py
-    pass
+    return get_user_info(uid)
 
 def change_profile(content_type, uid, content):
     """

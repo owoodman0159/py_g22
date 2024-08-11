@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group22 Python Project</title>
+    <link rel="stylesheet" href="../static/css/profile.css">
+</head>
+<script>
+    function find_match() {
+
+    }
+    function view_liked() {
+
+    }
+
+    function view_unliked() {
+
+    }
+    function view_mutual_liked() {
+
+    }
+
+</script>
+<body>
+    <h1>User Profile</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div>
+            {{ messages[-1] }}
+        </div>
+        {% endif %}
+    {% endwith %}
+
+    {% if user %}
+    <p>Name: {{ user[0] }}</p> 
+    <p>Email: {{ user[1] }}</p> 
+    <p>Gender: {{ user[2] }}</p> 
+    <p>Location: {{ user[3] }}</p> 
+    <p>Age: {{ user[4] }}</p> 
+    {% else %}
+    <p>No user information available.</p>
+    {% endif %}
+    
+    <div>
+        <button onclick="find_match()">Find match</button>
+        <button onclick="view_liked()">View your liked users</button>
+        <button onclick="view_unliked() ">View your unliked users</button>
+        <button onclick="view_mutual_liked()">View mutual liked users with you</button>
+    </div>
+</body>
+</html>
