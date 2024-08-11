@@ -18,8 +18,8 @@ It is a very simple program that allows user to
 - user can view people he liked and also liked him
 
 ## matchapp [click here to redirect]([(https://github.com/Qiyiiii/py_g22/tree/main/matchapp)])
-- still a very simple program but with sqllite embeded and more encapsulated design and use <b1>Flask</b1> to serve frontend content 
-- users now can do whatever that is decribed in the [Intro](#introduction-1)
+- still a very simple program but with sqllite embeded and more encapsulated design and use **Flask** to serve frontend content 
+- users now can do whatever that is decribed in the [**Intro**](#intro)
 - can be deplyed on the website
 
 
