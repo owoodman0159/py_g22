@@ -28,8 +28,8 @@ It is a very simple program that allows user to
 ### User:
 basic information: 
 - name: name of the user
-- email: email of the user. Attention: unique for all users, which is, one email address can only registered once to create user
-- gender: gender of the user. Attention: only limited to male and female
+- email: email of the user. **notice**: unique for all users, which is, one email address can only registered once to create user
+- gender: gender of the user. **notice**: only limited to male and female
 - location: location or address of the user
 - age: age of the user
 
