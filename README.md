@@ -63,6 +63,7 @@ basic information:
 in the database directory (for mac usrer):
 - chmod u+x script.sh
 - ./script.sh
+  
 or you can
 - sqlite3 matchapp.db < schema.sql
 - sqlite3 matchapp.db < data.sql
