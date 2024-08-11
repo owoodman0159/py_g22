@@ -26,7 +26,12 @@ It is a very simple program that allows user to
 # Architecture:
 ## Three **entity class** are stored in the database
 ### User:
-- basic information: name, email, gender, location, age
+basic information: 
+- name
+- email
+- gender
+- location
+- age
 ### Interest
 - interest of a user in the format (userid, interest)
 ### Actions
@@ -40,12 +45,11 @@ It is a very simple program that allows user to
 - Lastly, Flask can serve frontend content and use functions from match.py as well as profile.py to do the update
 <img src="https://raw.githubusercontent.com/Qiyiiii/py_g22/0a0637e2f47acc0d9fb2b0edb6552501fee9d6a5/imgs/clean.png" alt="Clean Architecture Diagram" width="600" height="400">
 
-# to work under virtual env:
-source venv/bin/activate
+# How to set up virtualenv and downloaded required package:
+- **Warning**: my original venv file only support for macos users, could cause some problems if you are using other os
+- [click here for the tutorial](https://virtualenv.pypa.io/en/latest/user_guide.html)
+- In order to make sure you have all packages needed, you should, in shell, enter: pip install -r requirements.txt
+- [requirements can be found here](https://github.com/Qiyiiii/py_g22/blob/4e266a714d9fa10989a0df46797518ea24077f17/matchapp/requirements.txt)
+- also the version of python during initial development is Python 3.9.12
+  
 
-# demo is a Low-Level Prototypes for our project
-# with text based interface and pre-loaded data
-
-# matchapp is the project that we will focus on
-# with GUI and SQLlite db
-# Python 3.9.12
