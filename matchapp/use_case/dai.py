@@ -1,178 +1,329 @@
 import sqlite3
 
-# Data Access Interface
+DB_PATH = "../database/matchapp.db"
 
-# With respect to how to set up sqllite db
-# https://www.ionos.ca/digitalguide/websites/web-development/sqlite3-python/
-
-# Profile CRUD
-
-def create_user( cursor, name, email, gender, location, age):
+def create_user(name, email, gender, location, age):
     """
-    Create a new user and Insert into database 
+    Create a new user and insert into the database.
 
-    Return: uid of the created user
+    Returns: 
+    int: uid of the created user
+    """
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # Perform Insert to the table
+            cursor.execute('''
+                INSERT INTO User (name, email, gender, location, age)
+                VALUES (?, ?, ?, ?, ?)
+            ''', (name, email, gender, location, age))
+
+            # Save change
+            connection.commit()
+
+            # Get id of the new user
+            user_id = cursor.lastrowid
+            
+            print(f"User {name} added successfully with ID {user_id}.")
+            return user_id
+    except sqlite3.Error as e:
+        print(f"Error creating user: {e}")
+        return -1
+
+def get_user_info(uid):
+    """
+    Get the profile information of the User with (uid) from the database.
+
+    Returns: 
+    Tuple(name, email, gender, location, age)
+    """
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to get user's information
+            pass
+
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return ()
+
+
+def remove_user_with_id(uid):
+    """
+    Delete an existing user from the database.
+
+    Return:
+    bool: True on success, False otherwise.
+    """
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to remove a user
+            pass
+
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return False
+
+
+def update_user_gender(uid, new_gender):
+    """
+    Change the gender of the user with the specific uid.
+
+    Return:
+    bool: True on success, False otherwise.
     """
 
-    # Perform Insert to the table
-    cursor.execute('''
-        INSERT INTO User (name, email, gender, location, age)
-        VALUES (?, ?, ?, ?, ?)
-        ''', (name, email, gender, location, age))
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to update user gender
+            pass
+
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return False
+
+def update_user_age(uid, new_age):
+    """
+    Change the age of the user with the specific uid.
+
+    Return:
+    bool: True on success, False otherwise.
+    """
     
-    # Save change
-    cursor.connection.commit()
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to update user age
+            pass
 
-    # Get id of the new user
-    user_id = cursor.lastrowid
-    
-    print(f"User {name} added successfully with ID {user_id}. ")
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return ()
 
-def get_user_info(cursor, uid):
+def update_user_location(uid, new_location):
     """
-    Get the profile information of the User with (uid) from the database
-
-    Returns: Tuple(name, email, gender, location, age)
-    """
-    # TODO: 
-    pass
-
-def remove_user_with_id(cursor, uid):
-    """
-    Delete an existing user and remove from  into database 
+    Change the location of the user with the specific uid.
 
     Return:
-    when removed successfully, return True
-    else False
+    bool: True on success, False otherwise.
     """
-    # TODO: 
-    pass
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to update user location
+            pass
 
-def update_user_gender(curosr, uid, new_gender):
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return False
+
+def update_user_name(uid, new_name):
     """
-    Change User with the specific uid (uid) to have a new gender (new_gender)
+    Change the name of the user with the specific uid.
 
     Return:
-    when removed successfully, return True
-    else False
+    bool: True on success, False otherwise.
     """
-    # TODO: 
-    pass
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to update user name
+            pass
 
-def update_user_age(curosr, uid, new_age):
-    """
-    Change User with the specific uid(uid) to have a new age (new_age)
-
-    Return:
-    when removed successfully, return True
-    else False
-    """
-    # TODO: 
-    pass
-
-
-def update_user_location(curosr, uid, new_location):
-    """
-    Change User with the specific uid(uid) to have a new location (new_location)
-
-    Return:
-    when removed successfully, return True
-    else False
-    """
-    # TODO: 
-    pass
-
-def update_user_name(curosr, uid, new_name):
-    """
-    Change User with the specific uid(uid) to have a new name (new_name)
-
-    Return:
-    when removed successfully, return True
-    else False
-    """
-    # TODO: 
-    pass
-
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return False
 
 # Action CRUD
-
-def add_action(cursor, uid1, uid2, action):
+def add_action(uid1, uid2, action):
     """
-    add a specific user interaction from user with (uid1) to user with (uid2) 
-    to boolean action True -> like
-    or False -> unlike
+    Add a specific user interaction from user with (uid1) to user with (uid2).
 
     Return:
-    when removed successfully, return True
-    else False
+    bool: True on success, False otherwise.
     """
-    # TODO: 
-    pass
-def change_action(cursor, uid1, uid2, action):
+
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to add an action
+            pass
+
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return False
+
+def change_action(uid1, uid2, action):
     """
-    change a specific user interaction from user with (uid1) to user with (uid2)
-    to boolean action True -> like
-    or False -> unlike
+    Change a specific user interaction from user with (uid1) to user with (uid2).
 
     Return:
-    when removed successfully, return True
-    else False
+    bool: True on success, False otherwise.
     """
-    # TODO: 
-    pass
+    
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to change an action
+            pass
 
-def get_user_action(cursor, uid):
-    """
-    Find all actions from that user to other people
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return False
 
-    Return:
-    List of actions that from User with (uid) 
+def get_user_action(uid):
     """
-    # TODO:
-    pass
-
-def get_user_likes(cursor, uid):
-    """
-    Find all Users that the User with (uid) liked
-    hint: use get_user_action(cursor, uid) 
+    Find all actions from that user to other people.
 
     Return:
-    List of Users that the  User with (uid) liked
+    List: actions that from User with (uid)
     """
-    # TODO:
-    pass
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to retrieve user actions
+            pass
 
-def get_user_unlikes(cursor, uid):
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return []
+
+def get_user_likes(uid):
     """
-    Find all Users that the User with (uid) unliked
-    hint: use get_user_action(cursor, uid) 
+    Find all Users that the User with (uid) liked.
 
     Return:
-    List of Users that the  User with (uid) unliked
+    List: Users that the User with (uid) liked
     """
-    # TODO:
-    pass
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to retrieve liked users
+            pass
 
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return []
+
+def get_user_unlikes(uid):
+    """
+    Find all Users that the User with (uid) unliked.
+
+    Return:
+    List: Users that the User with (uid) unliked
+    """
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to retrieve unliked users
+            pass
+
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return []
+
+def get_mutual_likes(uid):
+    """
+    Find all Users that the User with (uid) liked that also likes User with (uid).
+
+    Return:
+    List: all Users that the User with (uid) liked that also likes User with (uid).
+    """
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to retrieve users that also likes the User with uid
+            pass
+
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return []
 
 # Interest CRUD
-def add_interest(curosr, uid, interest):
+def add_interest(uid, interest):
     """
-    add interest (interest) to User with (uid) 
+    Add interest to a User with (uid).
+
+    Return:
+    bool: True on success, False otherwise.
     """
-    # TODO: 
-    pass
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to add interest
+            pass
 
-def remove_interest(curosr, uid, interest):
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return False
+
+def remove_interest(uid, interest):
     """
-    remove interest (interest) to User with (uid) 
+    Remove interest from a User with (uid).
+
+    Return:
+    bool: True on success, False otherwise.
     """
-    # TODO: 
-    pass
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to remove interest
+            pass
 
-# # example code
-# connection = sqlite3.connect("../database/matchapp.db")
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return False
 
-# cursor = connection.cursor()
+def get_interest(uid):
+    """
+    Get interests of a User with (uid).
 
-# create_user(cursor, 'Alex', 'alex@example.com', 'Male', 'New York', 25)
+    Return:
+    List: interests of the User with (uid)
+    """
+    
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: Implement the logic to retrieve user interests
+            pass
 
+    except sqlite3.Error as e:
+        # print error message
+        # change it to your own
+        print(f"Not succuessful: {e}")
+        return []
+    
+# Example usage
+if __name__ == "__main__":
+    user_id = create_user('Pokemon', 'pk@rotman.com', 'Male', 'Trt', 25)
