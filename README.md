@@ -46,7 +46,7 @@ basic information:
 <img src="https://raw.githubusercontent.com/Qiyiiii/py_g22/0a0637e2f47acc0d9fb2b0edb6552501fee9d6a5/imgs/clean.png" alt="Clean Architecture Diagram" width="600" height="400">
 
 ## [Frontend content](https://github.com/Qiyiiii/py_g22/tree/main/matchapp/app)
-### .html files are stored in [here](https://github.com/Qiyiiii/py_g22/tree/main/matchapp/app/templates) under template directory
+### html files are stored in [here](https://github.com/Qiyiiii/py_g22/tree/main/matchapp/app/templates) under template directory
 - index.html is the start page after running the program
 ### css and other static files are stored in [here](https://github.com/Qiyiiii/py_g22/tree/main/matchapp/app/templates)
 
@@ -56,5 +56,17 @@ basic information:
 - In order to make sure you have all packages needed, you should, in shell, enter: pip install -r requirements.txt
 - [requirements can be found here](https://github.com/Qiyiiii/py_g22/blob/4e266a714d9fa10989a0df46797518ea24077f17/matchapp/requirements.txt)
 - also the version of python during initial development is Python 3.9.12
+  
+# Database start-up
+## In order to import required tables and pre-created data into the database
+**warning** please setup the virtualenv first or make sure all required packages are downloaded before this step
+in the database directory (for mac usrer):
+- chmod u+x script.sh
+- ./script.sh
+or you can
+- sqlite3 matchapp.db < schema.sql
+- sqlite3 matchapp.db < data.sql
+  
+
   
 
