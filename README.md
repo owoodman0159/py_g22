@@ -29,9 +29,6 @@ It is a very simple program that allows user to
   -- only dai.py (as Database Access Interface) can access database.db and do CRUD operations on it
   -- match.py and profile.py under controller directory can access functions in dai.py, and they represent two main functions that our program can do
   -- Lastly, Flask can serve frontend content and use functions from match.py as well as profile.py to do the update
-  --
-  
-
 # to work under virtual env:
 source venv/bin/activate
 
