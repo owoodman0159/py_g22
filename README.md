@@ -67,7 +67,9 @@ in the database directory (for mac usrer):
 or you can
 - sqlite3 matchapp.db < schema.sql
 - sqlite3 matchapp.db < data.sql
-  
+
+to first load the required table for "entity class" and then load pre-created data
+
 
   
 
