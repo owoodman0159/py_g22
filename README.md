@@ -3,8 +3,7 @@ Welcome to the **tinder-like matchapp** designed and developed by **Group 22**
 It is a very simple program that allows user to 
 - register their information in database as an user
 - login to see their profile with their unique userid that is automatically generated 
-- change/delete their profile information
-  -- after deletion, their information will be removed from database
+- change/delete their profile information (after deletion, their information will be removed from database)
 - match people that based on their information
 - like/unlike people that were matched
 - find people they liked/unliked and people also liked them back (users that are mutually liked with the login user)
@@ -24,11 +23,12 @@ It is a very simple program that allows user to
 
 # archetecture:
 - Three **entity class** called User, Interest, and Actions, they are stored in the database
-- encapsulation:
--- information are stored under database.db with schema.sql and some preloaded information in data.sql
--- only dai.py (as Database Access Interface) can access database.db and do CRUD operations on it
-  -- match.py and profile.py under controller directory can access functions in dai.py, and they represent two main functions that our program can do
-  -- Lastly, Flask can serve frontend content and use functions from match.py as well as profile.py to do the update
+## encapsulation:
+- information are stored under database.db with schema.sql and some preloaded information in data.sql
+- only dai.py (as Database Access Interface) can access database.db and do CRUD operations on it
+- match.py and profile.py under controller directory can access functions in dai.py, and they represent two main functions that our program can do
+- Lastly, Flask can serve frontend content and use functions from match.py as well as profile.py to do the update
+
 # to work under virtual env:
 source venv/bin/activate
 
