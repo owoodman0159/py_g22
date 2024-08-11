@@ -27,13 +27,16 @@ It is a very simple program that allows user to
 ## Three **entity class** are stored in the database
 ### User:
 basic information: 
-- name
-- email
-- gender
-- location
-- age
+- name: name of the user
+- email: email of the user. Attention: unique for all users, which is, one email address can only registered once to create user
+- gender: gender of the user. Attention: only limited to male and female
+- location: location or address of the user
+- age: age of the user
+
 ### Interest
-- interest of a user in the format (userid, interest)
+interest of a user in the format (userid, interest)
+- userid reference the User instance with uid
+- if the user with userid is deleted (delete profile), all interests related to the user with this userid will be automatically removed
 ### Actions
 - actions between two users in the format (userid1, userid2, action)
 - userid1 is the id of the user who does the action, and userid2 is the id of the user who get the action
