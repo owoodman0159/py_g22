@@ -45,6 +45,11 @@ basic information:
 - Lastly, Flask can serve frontend content and use functions from match.py as well as profile.py to do the update
 <img src="https://raw.githubusercontent.com/Qiyiiii/py_g22/0a0637e2f47acc0d9fb2b0edb6552501fee9d6a5/imgs/clean.png" alt="Clean Architecture Diagram" width="600" height="400">
 
+## [Frontend content](https://github.com/Qiyiiii/py_g22/tree/main/matchapp/app)
+### .html files are stored in [here](https://github.com/Qiyiiii/py_g22/tree/main/matchapp/app/templates) under template directory
+- index.html is the start page after running the program
+### css and other static files are stored in [here](https://github.com/Qiyiiii/py_g22/tree/main/matchapp/app/templates)
+
 # How to set up virtualenv and downloaded required package:
 - **Warning**: my original venv file only support for macos users, could cause some problems if you are using other os
 - [click here for the tutorial](https://virtualenv.pypa.io/en/latest/user_guide.html)
