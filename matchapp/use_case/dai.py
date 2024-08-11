@@ -30,7 +30,26 @@ def create_user(name, email, gender, location, age):
         print(f"Error creating user: {e}")
         return -1
 
+
+def get_users():
+    """
+    get a list of userid that are stored in the database.
+
+    Returns: 
+    List: userids of the existing users
+    """
+    try:
+        with sqlite3.connect(DB_PATH) as connection:
+            cursor = connection.cursor()
+            # TODO: implement the logic to get all users' id into a list
+
+            return []
+    except sqlite3.Error as e:
+        print(f"Error fetch users: {e}")
+        return []
+    
 def get_user_info(uid):
+
     """
     Get the profile information of the User with (uid) from the database.
 
