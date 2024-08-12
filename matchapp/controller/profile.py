@@ -23,6 +23,7 @@ def add_user(name, email, gender, location, age):
     """
     return create_user(name, email, gender, location, age)
 
+
 def get_user_profile(uid):
     """
     get the profile of the user with (uid)
@@ -69,31 +70,34 @@ def delete_user(uid):
     pass
 def get_liked_users(uid):
     """
-    get a list of people that User with (uid) liked
+    get a list of users that User with (uid) liked
 
     Return: 
-    List: people that User with (uid) liked
+    List: (name, emails) of users that User with (uid) liked
     """
-    # TODO: HINT: use get_user_likes(uid)
+    # TODO: HINT: use get_user_likes(uid), but be careful you should return a list of ((name, emails))
+    return []
     pass
 
-def get_liked_users(uid):
+def get_unliked_users(uid):
     """
-    get a list of people that User with (uid) unliked
+    get a list of users that User with (uid) unliked
 
     Return: 
-    List: people that User with (uid) unliked
+    List: (name, emails) of users that User with (uid) unliked
     """
-    # TODO: HINT: use get_user_unlikes(uid)
+    # TODO: HINT: use get_user_unlikes(uid), but be careful you should return a list of ((name, emails))
+    return []
     pass
 def get_mutual_liked_users(uid):
     """
-    get a list of people that User with (uid) liked and that also liked User with (uid)
+    get a list of users that User with (uid) liked and that also liked User with (uid)
 
     Return:
-    List: people that User with (uid) liked and that also liked User with (uid)
+    List: (name, emails) of users that User with (uid) liked and that also liked User with (uid)
     """
-    # TODO: HINT: use get_mutual_likes(uid):
+    # TODO: HINT: use get_mutual_likes(uid), but be careful you should return a list of ((name, emails))
+    return []
     pass
 
 

@@ -59,8 +59,36 @@ def match(uid1):
         return render_template("matchedPage.html", user= matched_user_info, uid1=uid1, uid2=matched_userid)
     else:
         flash(f"Can't find a match with {uid1}")
+        return redirect(url_for('profile', uid=uid))
 
+@app.route('/liked-users/<int:uid>')
+def liked_users(uid):
+    users = get_liked_users(uid)
+    if users:
+        return render_template("userList.html", users=users, uid=uid)
+    else:
+        flash(f"User with {uid} didn't like any users")
+        return render_template("userList.html", users=users, uid=uid)
+        # return redirect(url_for('profile', uid=uid))
+@app.route('/unliked-users/<int:uid>')
+def unliked_users(uid):
+    users = get_unliked_users(uid)
+    if users:
+        return render_template("userList.html", users=users, uid=uid)
+    else:
+        flash(f"User with {uid} didn't unlike any users")
+        return render_template("userList.html", users=users, uid=uid)
+        # return redirect(url_for('profile', uid=uid))
 
+@app.route('/mutually-liked-users/<int:uid>')
+def mutual_users(uid):
+    users = get_mutual_liked_users(uid)
+    if users:
+        return render_template("userList.html", users=users, uid=uid)
+    else:
+        flash(f"User with {uid} has no mutually liked users")
+        return render_template("userList.html", users=users, uid=uid)
+        # return redirect(url_for('profile', uid=uid))
 
 @app.route('/create_user', methods=['POST'])
 def create_user():

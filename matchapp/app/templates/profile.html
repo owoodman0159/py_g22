@@ -6,21 +6,21 @@
     <link rel="stylesheet" href="../static/css/profile.css">
 </head>
 <script>
-    function match(uid1) {
+    function match(uid) {
 
           
-            window.location.href = `/match/${uid1}`;
+        window.location.href = `/match/${uid}`;
  
     }
-    function view_liked() {
-
+    function view_liked(uid) {
+        window.location.href = `/liked-users/${uid}`;
     }
 
-    function view_unliked() {
-
+    function view_unliked(uid) {
+        window.location.href = `/unliked-users/${uid}`;
     }
-    function view_mutual_liked() {
-
+    function view_mutual_liked(uid) {
+        window.location.href = `/mutually-liked-users/${uid}`;
     }
 
 </script>
@@ -47,9 +47,9 @@
     
     <div>
         <button onclick="match({{ uid }})">Find match</button>
-        <button onclick="view_liked()">View your liked users</button>
-        <button onclick="view_unliked() ">View your unliked users</button>
-        <button onclick="view_mutual_liked()">View mutual liked users with you</button>
+        <button onclick="view_liked({{ uid }})">View your liked users</button>
+        <button onclick="view_unliked({{ uid }}) ">View your unliked users</button>
+        <button onclick="view_mutual_liked({{ uid }})">View mutual liked users with you</button>
     </div>
 </body>
 </html>

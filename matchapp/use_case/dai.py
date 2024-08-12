@@ -231,7 +231,7 @@ def get_user_action(uid):
 
 def get_user_likes(uid):
     """
-    Find all Users that the User with (uid) liked.
+    Find all ids of Users that the User with (uid) liked.
 
     Return:
     List: Users that the User with (uid) liked
@@ -250,7 +250,7 @@ def get_user_likes(uid):
 
 def get_user_unlikes(uid):
     """
-    Find all Users that the User with (uid) unliked.
+    Find all ids of Users that the User with (uid) unliked.
 
     Return:
     List: Users that the User with (uid) unliked
@@ -269,7 +269,7 @@ def get_user_unlikes(uid):
 
 def get_mutual_likes(uid):
     """
-    Find all Users that the User with (uid) liked that also likes User with (uid).
+    Find all ids of Users that the User with (uid) liked that also likes User with (uid).
 
     Return:
     List: all Users that the User with (uid) liked that also likes User with (uid).
