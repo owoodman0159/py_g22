@@ -1,3 +1,6 @@
 matchapp/database/matchapp.db
 matchapp.db
 venv/
+
+__pycache__/
+*.pyc
