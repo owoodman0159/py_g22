@@ -8,7 +8,7 @@ It is a very simple program that allows user to
 - like/unlike people that were matched
 - find people they liked/unliked and people also liked them back (users that are mutually liked with the login user)
 
-# demo 
+# demo (low-level prototype)
 ### [click here to redirect](https://github.com/Qiyiiii/py_g22/tree/main/demo).
 - very simple program with data preloaded into different lists (Users, Interests, Actions) each time when the program starts
 - user will be directly loged in and can only interact with users that were preloaded
@@ -17,7 +17,7 @@ It is a very simple program that allows user to
 - user can view his profile
 - user can view people he liked and also liked him
 
-# matchapp 
+# matchapp (web application)
 ### [click here to redirect](https://github.com/Qiyiiii/py_g22/tree/main/matchapp)
 - still a very simple program but with sqllite embeded and more encapsulated design and use **Flask** to serve frontend content 
 - users now can do whatever that is decribed in the [**Intro**](#intro)
