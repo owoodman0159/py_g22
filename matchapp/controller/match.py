@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from use_case.dai import *
+from use_case.dataManager import *
 
 def find_match(uid):
     """
