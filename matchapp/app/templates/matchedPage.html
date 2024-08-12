@@ -43,6 +43,15 @@
     {% else %}
     <p>No user information available.</p>
     {% endif %}
+
+    {% if interests %}
+    <p>My interest:</p>
+    {% for interest in interets %}
+        <li>{{ interest }}</li>
+        {% endfor %}
+    {% else %}
+    <p>Don't have any interest in record yet</p>
+    {% endif %}
     
     <div>
         <button onclick="likeUser({{ uid1 }}, {{uid2}})">Like User 2</button>

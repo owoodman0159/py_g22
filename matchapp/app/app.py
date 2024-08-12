@@ -25,9 +25,11 @@ def register():
 @app.route('/profile/<int:uid>')
 def profile(uid):
     user_info = get_user_info(uid)
+    user_interests = get_interest(uid)
+
 
     if user_info != ():
-        return render_template("profile.html", user=user_info, uid=uid)
+        return render_template("profile.html", user=user_info, uid=uid, interests = user_interests)
     else:
         return render_template("index.html")
     
@@ -54,9 +56,10 @@ def match(uid1):
     # matched_userid = find_match(uid)
     matched_userid = 2
     matched_user_info = get_user_info(matched_userid)
+    interests = get_interest(matched_userid)
 
     if matched_userid:
-        return render_template("matchedPage.html", user= matched_user_info, uid1=uid1, uid2=matched_userid)
+        return render_template("matchedPage.html", user= matched_user_info, uid1=uid1, uid2=matched_userid, interests = interests)
     else:
         flash(f"Can't find a match with {uid1}")
         return redirect(url_for('profile', uid=uid))
@@ -85,6 +88,17 @@ def mutual_users(uid):
     users = get_mutual_liked_users(uid)
     if users:
         return render_template("userList.html", users=users, uid=uid)
+    else:
+        flash(f"User with {uid} has no mutually liked users")
+        return render_template("userList.html", users=users, uid=uid)
+        # return redirect(url_for('profile', uid=uid))
+
+@app.route('/top_user/<int:uid>')
+def best_matches(uid):
+    users = get_top_5_user(uid)
+    infos = ((get_user_info(userid),score) for userid, score in users)
+    if users:
+        return render_template("userList.html", infos, infos, uid=uid)
     else:
         flash(f"User with {uid} has no mutually liked users")
         return render_template("userList.html", users=users, uid=uid)

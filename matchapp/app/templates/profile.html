@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="../static/css/profile.css">
 </head>
 <script>
+
+    function add_interest(){
+        let new_interest = prompt("Please enter your interest:");
+            if (new_interest) {
+                
+            }
+    }
     function match(uid) {
 
           
@@ -22,6 +29,12 @@
     function view_mutual_liked(uid) {
         window.location.href = `/mutually-liked-users/${uid}`;
     }
+
+    function view_top_5(uid) {
+        window.location.href = `/top_user/${uid}`;
+    }
+
+
 
 </script>
 <body>
@@ -44,12 +57,23 @@
     {% else %}
     <p>No user information available.</p>
     {% endif %}
+
+    {% if interests %}
+    <p>My interest:</p>
+    {% for interest in interets %}
+        <li>{{ interest }}</li>
+        {% endfor %}
+    {% else %}
+    <p>Don't have any interest in record yet</p>
+    {% endif %}
     
     <div>
-        <button onclick="match({{ uid }})">Find match</button>
+        <button onclick="add_interest()">Add interest</button>
+        <button onclick="match({{ uid }})">View Profiles</button>
         <button onclick="view_liked({{ uid }})">View your liked users</button>
         <button onclick="view_unliked({{ uid }}) ">View your unliked users</button>
         <button onclick="view_mutual_liked({{ uid }})">View mutual liked users with you</button>
+        <!-- <button onclick="view_top_5({{ uid }})">Top matches</button> -->
     </div>
 </body>
 </html>
