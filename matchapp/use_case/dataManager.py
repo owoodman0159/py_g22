@@ -59,7 +59,6 @@ def get_user_info(uid):
     try:
         with sqlite3.connect(DB_PATH) as connection:
             cursor = connection.cursor()
-            # TODO: Implement the logic to get user's information
             cursor = connection.cursor()
             cursor.execute('SELECT name, email, gender, location, age FROM User WHERE uid = ?', (uid,))
             return cursor.fetchone()
@@ -190,44 +189,44 @@ def add_action(uid1, uid2, action):
         print(f"Not succuessful: {e}")
         return False
 
-def change_action(uid1, uid2, action):
-    """
-    Change a specific user interaction from user with (uid1) to user with (uid2).
+# def change_action(uid1, uid2, action):
+#     """
+#     Change a specific user interaction from user with (uid1) to user with (uid2).
 
-    Return:
-    bool: True on success, False otherwise.
-    """
+#     Return:
+#     bool: True on success, False otherwise.
+#     """
     
-    try:
-        with sqlite3.connect(DB_PATH) as connection:
-            cursor = connection.cursor()
-            # TODO: Implement the logic to change an action
-            pass
+#     try:
+#         with sqlite3.connect(DB_PATH) as connection:
+#             cursor = connection.cursor()
+#             # TODO: Implement the logic to change an action
+#             pass
 
-    except sqlite3.Error as e:
-        # print error message
-        # change it to your own
-        print(f"Not succuessful: {e}")
-        return False
+#     except sqlite3.Error as e:
+#         # print error message
+#         # change it to your own
+#         print(f"Not succuessful: {e}")
+#         return False
 
-def get_user_action(uid):
-    """
-    Find all actions from that user to other people.
+# def get_user_action(uid):
+#     """
+#     Find all actions from that user to other people.
 
-    Return:
-    List: actions that from User with (uid)
-    """
-    try:
-        with sqlite3.connect(DB_PATH) as connection:
-            cursor = connection.cursor()
-            # TODO: Implement the logic to retrieve user actions
-            pass
+#     Return:
+#     List: actions that from User with (uid)
+#     """
+#     try:
+#         with sqlite3.connect(DB_PATH) as connection:
+#             cursor = connection.cursor()
+#             # TODO: Implement the logic to retrieve user actions
+#             pass
 
-    except sqlite3.Error as e:
-        # print error message
-        # change it to your own
-        print(f"Not succuessful: {e}")
-        return []
+#     except sqlite3.Error as e:
+#         # print error message
+#         # change it to your own
+#         print(f"Not succuessful: {e}")
+#         return []
 
 def get_user_likes(uid):
     """
@@ -286,8 +285,9 @@ def get_mutual_likes(uid):
         print(f"Not succuessful: {e}")
         return []
 
+
 # Interest CRUD
-def add_interest(uid, interest):
+def add_user_interest(uid, interest):
     """
     Add interest to a User with (uid).
 
@@ -306,24 +306,24 @@ def add_interest(uid, interest):
         print(f"Not succuessful: {e}")
         return False
 
-def remove_interest(uid, interest):
-    """
-    Remove interest from a User with (uid).
+# def remove_interest(uid, interest):
+#     """
+#     Remove interest from a User with (uid).
 
-    Return:
-    bool: True on success, False otherwise.
-    """
-    try:
-        with sqlite3.connect(DB_PATH) as connection:
-            cursor = connection.cursor()
-            # TODO: Implement the logic to remove interest
-            pass
+#     Return:
+#     bool: True on success, False otherwise.
+#     """
+#     try:
+#         with sqlite3.connect(DB_PATH) as connection:
+#             cursor = connection.cursor()
+#             # TODO: Implement the logic to remove interest
+#             pass
 
-    except sqlite3.Error as e:
-        # print error message
-        # change it to your own
-        print(f"Not succuessful: {e}")
-        return False
+#     except sqlite3.Error as e:
+#         # print error message
+#         # change it to your own
+#         print(f"Not succuessful: {e}")
+#         return False
 
 def get_interest(uid):
     """

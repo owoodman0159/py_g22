@@ -32,7 +32,6 @@ def get_user_profile(uid):
     On success, return tuple(name, email, gender, location, age)
     else ()
     """
-    # TODO: HINT: use get_user_info(uid) from dai.py
     return get_user_info(uid)
 
 def change_profile(content_type, uid, content):
@@ -58,6 +57,28 @@ def change_profile(content_type, uid, content):
         pass
     # TODO: keep handling rest cases
 
+
+def add_interest(uid, interest):
+
+    """
+    add the interest to the interes of the user with (uid)
+
+    Return:
+    bool: True on success, False otherwise.
+    
+    """
+    # TODO: HINT: add_user_interest(uid, interest)
+    return True
+
+def get_interest(uid):
+    """
+    get a list of interes of the user with (uid)
+
+    Return:
+    List(str): interests of the user with uid
+    """
+    # TODO: HINT: use get_user_likes(uid)
+    return []
 def delete_user(uid):
     """
     delete the user with (uid)
@@ -99,6 +120,7 @@ def get_mutual_liked_users(uid):
     # TODO: HINT: use get_mutual_likes(uid), but be careful you should return a list of ((name, emails))
     return []
     pass
+
 
 
 #  example code
