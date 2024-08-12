@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="../static/css/profile.css">
 </head>
 <script>
-    function match(uid1) {
-
-          
-            window.location.href = `/match/${uid1}`;
- 
-    }
-    function view_liked() {
-
+    function likeUser(uid1, uid2) {
+        
+        window.location.href = `/like/${uid1}/${uid2}`;
     }
 
-    function view_unliked() {
+    function unlikeUser(uid1, uid2) {
+
+        window.location.href = `/unlike/${uid1}/${uid2}`;
+    }
+
+
+    function back(uid1) {
+        window.location.href = `/profile/${uid1}`;
 
     }
-    function view_mutual_liked() {
 
-    }
 
 </script>
 <body>
@@ -33,7 +33,6 @@
         </div>
         {% endif %}
     {% endwith %}
-    <p>User ID: {{ uid }}</p>
 
     {% if user %}
     <p>Name: {{ user[0] }}</p> 
@@ -46,10 +45,10 @@
     {% endif %}
     
     <div>
-        <button onclick="match({{ uid }})">Find match</button>
-        <button onclick="view_liked()">View your liked users</button>
-        <button onclick="view_unliked() ">View your unliked users</button>
-        <button onclick="view_mutual_liked()">View mutual liked users with you</button>
+        <button onclick="likeUser({{ uid1 }}, {{uid2}})">Like User 2</button>
+        <button onclick="unlikeUser({{ uid1 }}, {{uid2}})">Unlike User 2</button>
+        <button onclick="back({{uid1}}) ">Go back to profile page</button>
+
     </div>
 </body>
 </html>
