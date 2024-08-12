@@ -8,7 +8,7 @@ It is a very simple program that allows user to
 - like/unlike people that were matched
 - find people they liked/unliked and people also liked them back (users that are mutually liked with the login user)
 
-# demo 
+# demo (low-level prototype)
 ### [click here to redirect](https://github.com/Qiyiiii/py_g22/tree/main/demo).
 - very simple program with data preloaded into different lists (Users, Interests, Actions) each time when the program starts
 - user will be directly loged in and can only interact with users that were preloaded
